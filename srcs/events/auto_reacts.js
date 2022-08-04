@@ -1,4 +1,4 @@
-const { restricted_guilds } = require("../config.json");
+const restricted_guilds = JSON.parse(process.env.DISCORD_BOT_RESTRICTED_GUILDS);
 const keywords = [
 	"beer",
 	"ipa",

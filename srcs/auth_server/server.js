@@ -3,7 +3,6 @@ const axios = require("axios");
 const http = require("http");
 
 const { readDB, writeDB } = require("../utils.js");
-const { guildId } = require("../config.json");
 
 // Function that take the token and try to get user's informations from it
 async function getUserInformations(token, user_res, user_code, client) {
@@ -37,7 +36,7 @@ async function validateAuth(discordUserId, user, client) {
 	//todo: Tuteur ? Staff ? Bocal ?
 	//todo: rename <name> (login)
 
-	const guild = await client.guilds.fetch(guildId);
+	const guild = await client.guilds.fetch(process.env.DISCORD_BOT_GUILD_ID);
 	const member = await guild.members.fetch(discordUserId);
 
 	const bocal = user["staff?"];

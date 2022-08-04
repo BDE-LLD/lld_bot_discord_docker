@@ -1,4 +1,3 @@
-const { api_uri: uri } = require("../config.json");
 const { MessageEmbed } = require("discord.js");
 const axios = require("axios");
 const { stripIndents } = require("common-tags");
@@ -30,7 +29,7 @@ module.exports = {
 		const color = coa ? coa.color : null;
 		// const location = await getLocation(login, config);
 		axios
-			.get(uri + "users/" + login, config)
+			.get(process.env.API_URL + "users/" + login, config)
 			.then(async (res) => {
 				const user = res.data;
 				const embed = new MessageEmbed().setColor(color || "RANDOM");
@@ -123,7 +122,7 @@ function getPrimaryCampus(user) {
 
 async function getCoa(user, config) {
 	return await axios
-		.get(uri + "users/" + user + "/coalitions", config)
+		.get(process.env.API_URL + "users/" + user + "/coalitions", config)
 		.then(async (res) => {
 			await sleep(500);
 			return res.data.filter((coa) => coa.slug.includes("42cursus-paris"))[0];

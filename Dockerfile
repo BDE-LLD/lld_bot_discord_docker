@@ -8,4 +8,6 @@ COPY ./srcs ./
 RUN npm install --location=global npm@latest
 RUN npm install
 
+EXPOSE 3000
+
 CMD [ "node", "main.js" ]

@@ -35,7 +35,7 @@ for (const file of eventFiles) {
 const httpServer = startApp(client);
 client.login(process.env.DISCORD_BOT_TOKEN);
 
-const port = 2424;
+const port = 3000;
 httpServer.listen(port, () => {
 	console.log("Server running on port " + port);
 });

@@ -1,4 +1,3 @@
-require("dotenv").config();
 const axios = require("axios");
 const querystring = require("node:querystring");
 // const { client } = require("./main.js");
@@ -14,8 +13,8 @@ module.exports = {
 		};
 		const bodyContent = querystring.stringify({
 			grant_type: "client_credentials",
-			client_id: process.env.CLIENT_ID,
-			client_secret: process.env.CLIENT_SECRET,
+			client_id: process.env.DISCORD_BOT_42_API_CLIENT_ID,
+			client_secret: process.env.DISCORD_BOT_42_API_CLIENT_SECRET,
 		});
 
 		const reqOptions = {

@@ -1,5 +1,3 @@
-require("dotenv").config();
-
 const express = require("express");
 const axios = require("axios");
 const http = require("http");
@@ -104,8 +102,8 @@ function startApp(client) {
 					);
 			const params = {
 				grant_type: "authorization_code",
-				client_id: process.env.CLIENT_ID,
-				client_secret: process.env.CLIENT_SECRET,
+				client_id: process.env.DISCORD_BOT_42_API_CLIENT_ID,
+				client_secret: process.env.DISCORD_BOT_42_API_CLIENT_SECRET,
 				code: code,
 				redirect_uri:
 					"https://auth.bde42.me/42result?user_code=" + user_code,

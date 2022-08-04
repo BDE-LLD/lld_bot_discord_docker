@@ -1,5 +1,3 @@
-require("dotenv").config();
-
 const { api_uri: uri } = require("../config.json");
 const { MessageEmbed } = require("discord.js");
 const axios = require("axios");

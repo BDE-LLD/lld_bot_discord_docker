@@ -1,5 +1,3 @@
-require("dotenv").config();
-
 const fs = require("node:fs");
 const { REST } = require("@discordjs/rest");
 const { Routes } = require("discord-api-types/v9");
@@ -16,7 +14,7 @@ const deploy = (guildId) => {
 		commands.push(command.data);
 	}
 
-	const rest = new REST({ version: "9" }).setToken(process.env.TOKEN);
+	const rest = new REST({ version: "9" }).setToken(process.env.DISCORD_BOT_TOKEN);
 
 	rest
 		.put(Routes.applicationGuildCommands(clientId, guildId), { body: commands })

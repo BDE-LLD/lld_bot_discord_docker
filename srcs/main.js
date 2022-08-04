@@ -1,5 +1,3 @@
-require("dotenv").config();
-
 const fs = require("node:fs");
 const { Client, Collection, Intents } = require("discord.js");
 const { startApp } = require("./auth_server/server");
@@ -35,7 +33,7 @@ for (const file of eventFiles) {
 	}
 }
 const httpServer = startApp(client);
-client.login(process.env.TOKEN);
+client.login(process.env.DISCORD_BOT_TOKEN);
 
 const port = 2424;
 httpServer.listen(port, () => {

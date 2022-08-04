@@ -5,6 +5,7 @@ WORKDIR /usr/discord_bot
 
 COPY ./srcs ./
 
+RUN npm install --location=global npm@latest
 RUN npm install
 
-CMD [ "node", "server.js" ]
+CMD [ "node", "main.js" ]
